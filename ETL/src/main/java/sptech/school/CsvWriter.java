@@ -23,14 +23,14 @@ public class CsvWriter {
         CSVPrinter csvPrinter = new CSVPrinter(writer, format);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         for (Metrica metrica : metricas) {
-            String dataFormatada = sdf.format(metrica.getDateTime());
+            String dataFormatada = metrica.getDateTime() != null ? sdf.format(metrica.getDateTime()) : "NA";
             csvPrinter.printRecord(
-                    metrica.getCpuPercent(),
-                    metrica.getCpuFreq(),
-                    metrica.getRamPercent(),
-                    metrica.getRamUsed(),
-                    metrica.getDiskPercent(),
-                    metrica.getDiskUsage(),
+                    metrica.getCpuPercent() != null ? metrica.getCpuPercent() : "NA",
+                    metrica.getCpuFreq() != null ? metrica.getCpuFreq() : "NA",
+                    metrica.getRamPercent() != null ? metrica.getRamPercent() : "NA",
+                    metrica.getRamUsed() != null ? metrica.getRamUsed() : "NA",
+                    metrica.getDiskPercent() != null ? metrica.getDiskPercent() : "NA",
+                    metrica.getDiskUsage() != null ? metrica.getDiskUsage() : "NA",
                     dataFormatada
             );
         }
