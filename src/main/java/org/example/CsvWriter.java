@@ -21,7 +21,9 @@ public class CsvWriter {
                 .forEach(todosDiscos::add);
 
         List<String> headers = new ArrayList<>(Arrays.asList(
-                "data_hora", "cpu_freq", "cpu_percent", "ram_used", "ram_percent"));
+                "data_hora", "cpu_freq", "cpu_percent", "ram_used", "ram_percent",
+                "sendPackages", "receivePackages"
+        ));
 
         for (String disco : todosDiscos) {
             headers.add("disco_" + disco + "_used");
@@ -43,7 +45,9 @@ public class CsvWriter {
                     metrica.getCpuFreq() != null ? metrica.getCpuFreq() : "NA",
                     metrica.getCpuPercent() != null ? metrica.getCpuPercent() : "NA",
                     metrica.getRamUsed() != null ? metrica.getRamUsed() : "NA",
-                    metrica.getRamPercent() != null ? metrica.getRamPercent() : "NA"
+                    metrica.getRamPercent() != null ? metrica.getRamPercent() : "NA",
+                    metrica.getSendPackages() != null ? metrica.getSendPackages() : "NA",
+                    metrica.getReceivePackages() != null ? metrica.getReceivePackages() : "NA"
             ));
 
             for (String disco : todosDiscos) {

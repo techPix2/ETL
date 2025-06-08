@@ -9,6 +9,8 @@ public class Metrica {
     private Double cpuFreq;
     private Double ramPercent;
     private Double ramUsed;
+    private Double sendPackages;
+    private Double receivePackages;
     private Date dateTime;
 
     private Double diskPercent;
@@ -29,7 +31,6 @@ public class Metrica {
         public Double getPercent() { return percent; }
     }
 
-    // Getters e Setters padrão
     public Double getCpuPercent() { return cpuPercent; }
     public void setCpuPercent(Double cpuPercent) { this.cpuPercent = cpuPercent; }
 
@@ -41,6 +42,12 @@ public class Metrica {
 
     public Double getRamUsed() { return ramUsed; }
     public void setRamUsed(Double ramUsed) { this.ramUsed = ramUsed; }
+
+    public Double getSendPackages() { return sendPackages; }
+    public void setSendPackages(Double sendPackages) { this.sendPackages = sendPackages; }
+
+    public Double getReceivePackages() { return receivePackages; }
+    public void setReceivePackages(Double receivePackages) { this.receivePackages = receivePackages; }
 
     public Date getDateTime() { return dateTime; }
     public void setDateTime(Date dateTime) { this.dateTime = dateTime; }
@@ -59,5 +66,7 @@ public class Metrica {
         }
     }
 
-    public Map<String, DiskInfo> getDiscos() { return discos; }
+    public Map<String, DiskInfo> getDiscos() {
+        return discos;
+    }
 }

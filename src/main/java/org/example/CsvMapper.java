@@ -40,6 +40,8 @@ public class CsvMapper {
                 metrica.setCpuPercent(parseDouble(record.get("cpu_percent")));
                 metrica.setRamUsed(parseDouble(record.get("ram_used")));
                 metrica.setRamPercent(parseDouble(record.get("ram_percent")));
+                metrica.setSendPackages(parseDouble(record.get("sendPackages")));
+                metrica.setReceivePackages(parseDouble(record.get("receivePackages")));
 
                 for (String disco : discosIdentificados) {
                     Double used = parseDouble(record.get("disco_" + disco.toLowerCase() + "_used"));
